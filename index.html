@@ -16,12 +16,45 @@
       integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <title>Document</title>
 </head>
 <body>
-    
-</body>
+  <header class="header">
+    <div class="container">
+      <div class="game-name">
+        <p>find blocks</p>
+      </div>
+      <div class="tools row">
+        <div class="tools-button col-2">
+          <button type="button" class="btn btn-outline-success col-12 btns">start</button>
+        </div>
+        <div class="tools-button col-2">
+          <button type="button" class="btn btn-outline-primary btns">new game</button>
+        </div>
+        <div class="tools-button col-1 offset-1">
+          <div class="points btns">
+            <p>points</p>
+            <input type="text" class="point-time-counter" name="point-counter">
+          </div>
+        </div>
+        <div class="tools-button col-2 offset-2">
+          <div class="timer btns">
+            <p>time left</p>
+            <input type="text" class="point-time-counter time-counter" name="time-counter">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="main-content col-10">
+      </div>
+      <div class="sidebar col-2"></div>
+    </div>
+  </div>
+</body> 
 </html>
