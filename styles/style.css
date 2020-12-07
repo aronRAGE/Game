@@ -60,12 +60,20 @@ a,span,*::before,*::after{
 }
 body{
     font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
+	overflow-x: hidden;
+	background-color: azure;
 }
 .container{
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
+}
+.game-border{
+	border: 1px solid #000;
+    margin-top: 50px;
+	border-radius: 15px 15px 5px 5px;
+	padding-bottom: 30px;
+	background-color: ghostwhite;
 }
 /*==========MAIN FOR START==========*/
 
@@ -75,9 +83,11 @@ body{
 }
 .tools{
 	align-items: flex-end;
+	padding: 0px 30px;
 }
 .game-name{
 	margin-bottom: 15px;
+	border-bottom: 1px solid #000;
 }
 .game-name p{
 	font-size: 30px;
@@ -104,10 +114,14 @@ body{
 /*==========HEADER END==========*/
 
 /*==========MAIN START==========*/
-.main-content{
+.main-game-field{
 	border: 1px solid #000;
 	height: 500px;
-	border-radius: 15px ;
+	border-radius: 15px;
+	background-color: white;
+}
+.game-field{
+	padding: 0px 45px;
 }
 /*==========MAIN END==========*/
 

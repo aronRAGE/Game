@@ -22,39 +22,42 @@
     <title>Document</title>
 </head>
 <body>
-  <header class="header">
-    <div class="container">
-      <div class="game-name">
-        <p>find blocks</p>
-      </div>
-      <div class="tools row">
-        <div class="tools-button col-2">
-          <button type="button" class="btn btn-outline-success col-12 btns">start</button>
-        </div>
-        <div class="tools-button col-2">
-          <button type="button" class="btn btn-outline-primary btns">new game</button>
-        </div>
-        <div class="tools-button col-1 offset-1">
-          <div class="points btns">
-            <p>points</p>
-            <input type="text" class="point-time-counter" name="point-counter">
-          </div>
-        </div>
-        <div class="tools-button col-2 offset-2">
-          <div class="timer btns">
-            <p>time left</p>
-            <input type="text" class="point-time-counter time-counter" name="time-counter">
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
   <div class="container">
-    <div class="row">
-      <div class="main-content col-9">
+    <div class="game-border">
+      <header class="header">
+        
+          <div class="game-name">
+            <p>find blocks</p>
+          </div>
+          <div class="tools row">
+            <div class="tools-button col-2">
+              <button type="button" class="btn btn-outline-success col-12 btns">start</button>
+            </div>
+            <div class="tools-button col-2">
+              <button type="button" class="btn btn-outline-primary btns">new game</button>
+            </div>
+            <div class="tools-button col-1 offset-2">
+              <div class="points btns">
+                <p>points</p>
+                <input type="text" class="point-time-counter" name="point-counter">
+              </div>
+            </div>
+            <div class="tools-button col-1">
+              <div class="timer btns">
+                <p>time left</p>
+                <input type="text" class="point-time-counter time-counter" name="time-counter">
+              </div>
+            </div>
+          </div>
+        
+      </header>
+      
+        <div class="game-field row">
+          <div class="main-game-field col-9">
+          </div>
+          <div class="sidebar col-2 offset-1"></div>
+        </div>
       </div>
-      <div class="sidebar col-2 offset-1"></div>
-    </div>
   </div>
 </body> 
 </html>
