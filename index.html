@@ -31,7 +31,7 @@
           </div>
           <div class="tools row">
             <div class="tools-button col-2">
-              <button type="button" class="btn btn-outline-success col-12 btns">start</button>
+              <button type="button" class="btn btn-outline-success col-12 btns start" id="header-btns" name="header-btns">start</button>
             </div>
             <div class="tools-button col-2">
               <button type="button" class="btn btn-outline-primary btns">new game</button>
@@ -39,7 +39,7 @@
             <div class="tools-button col-1 offset-2">
               <div class="points btns">
                 <p>points</p>
-                <input type="text" class="point-time-counter" name="point-counter">
+                <input type="text" class="point-time-counter point-counter" id="point-counter" value="0" placeholder="" name="point-counter">
               </div>
             </div>
             <div class="tools-button col-1">
@@ -53,11 +53,14 @@
       </header>
       
         <div class="game-field row">
-          <div class="main-game-field col-9">
+          <div class="main-game-field col-9" id="game-field">
+            <!-- <button class="btn-block" name="block"></button>
+            <button class="btn-block" name="block"></button> -->
           </div>
           <div class="sidebar col-2 offset-1"></div>
         </div>
       </div>
   </div>
+  <script src="app.js"></script>
 </body> 
 </html>

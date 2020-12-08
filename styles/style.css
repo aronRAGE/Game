@@ -123,6 +123,11 @@ body{
 .game-field{
 	padding: 0px 45px;
 }
+.btn-block{
+	margin: 5px;
+    width: 120px;
+    height: 90px;
+}
 /*==========MAIN END==========*/
 
 /*==========SIDEBAR START==========*/
