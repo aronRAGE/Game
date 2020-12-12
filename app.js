@@ -1,46 +1,88 @@
 const field = document.getElementById("game-field")
-const headerBtns = document.getElementById("header-btns")
+const startBtn = document.getElementById("startBtn")
+const newGameBtn = document.getElementById("newGameBtn")
 const pointCounter = document.getElementById("point-counter")
-
-
-
-headerBtns.addEventListener('click', ev=>{
-    if (ev.target.classList.contains("start")) {
-       let addBlock = CreateBlock()
-       pointCounter.value = 0
-       refresh()
-       clearTimeout(refresh())
-       field.insertAdjacentHTML('beforeEnd', addBlock)
-    }
+const timer = document.getElementById('timer')
+let gameTimerId = null;
+let counter = 0
+const timeFormat = new Intl.DateTimeFormat(undefined, {
+    minute: '2-digit',
+    second: '2-digit'
 })
-field.addEventListener('click', event=>{
-    if (event.target.classList.contains('btn-block')) {
-        event.target.classList.add('d-none')
-        pointCounter.value++
-        
-    }
-})
-function CreateBlock() {
-    let Gameblock = `<button class="btn-block" name="block"></button>`
-    //let Gameblocks = Gameblock + Gameblock
-    return Gameblock
+const gameOptions = {
+    colors: ['red', 'gold', 'green', 'blue', 'purple'],
+    size: '100px',
+    minBlocks:3,
+    maxBlocks: 9,
+    time: 60000
 }
 
-    let sec=0;
-    let min=01;
 
-function refresh()
-{
-	sec--;
-	if(sec==-01){sec=59; min=min-1;}
-	else{min=min;}
-	if(sec<=9){sec="0" + sec;}
-	time=(min<=9 ? "0"+min : min) + ":" + sec;
-    if(document.getElementById('timer')){timer.value=time;}
-    setTimeout("refresh()", 1000)
-	// действие, если таймер 00:00
-	if(min=='00' && sec=='00'){
-		alert("finish")
-	}
+
+
+
+startBtn.addEventListener('click', ev => {
+    createGameTimer(gameOptions)
+    let addBlock = createBlock(gameOptions)
+    pointCounter.value = counter
+    field.append(addBlock)
+})
+
+newGameBtn.addEventListener('click', ev => {
+
+    
+})
+
+
+
+field.addEventListener('click', event => {
+    if (event.target.classList.contains('block')) {
+        event.target.remove()
+        counter++
+        pointCounter.value = counter
+    }
+})
+function createBlock(options) {
+    const block = document.createElement('div')
+
+    block.style.width = options.size
+    block.style.height = options.size
+    block.style.backgroundColor = options.colors[getRandomIntInclusive(0,options.colors.length - 1)]
+    block.classList.add('block')
+
+    return block
 }
 
+
+
+function createGameTimer(options) {
+    clearTimeout(gameTimerId)
+    let gameTime = options.time
+    gameTimerId = setTimeout(function tick() {
+
+        gameTime -= 1000
+
+        timer.value = timeFormat.format(gameTime)
+
+        if (gameTime > 0) {
+            gameTimerId = setTimeout(tick, 1000);
+        } else {
+            alert('game over')
+        }
+
+    }, 0);
+}
+
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+  }
+
+
+
+  const map = [
+      [1,0,0],
+      [0,1,0],
+      [0,0,1]
+  ]
