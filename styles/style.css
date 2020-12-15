@@ -114,12 +114,7 @@ body{
 /*==========HEADER END==========*/
 
 /*==========MAIN START==========*/
-.main-game-field{
-	border: 1px solid #000;
-	height: 500px;
-	border-radius: 15px;
-	background-color: white;
-}
+
 .game-field{
 	padding: 0px 45px;
 }
