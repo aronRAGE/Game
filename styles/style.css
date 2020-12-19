@@ -114,7 +114,18 @@ body{
 /*==========HEADER END==========*/
 
 /*==========MAIN START==========*/
-
+.main-game-field{
+	border: 1px solid #000;
+	/* height: 500px; */
+	position: relative;/*!!!*/
+	box-sizing: content-box;/*!!!*/
+	border-radius: 15px;
+	padding: 15px;
+	background-color: white;
+}
+.block{
+	position: absolute;
+}
 .game-field{
 	padding: 0px 45px;
 }
