@@ -3,6 +3,7 @@ const startBtn = document.getElementById("startBtn")
 const newGameBtn = document.getElementById("newGameBtn")
 const pointCounter = document.getElementById("point-counter")
 const timer = document.getElementById('timer')
+const finish = document.getElementById('finish')
 let gameTimerId = null;
 let counter = 0
 const timeFormat = new Intl.DateTimeFormat(undefined, {
@@ -17,7 +18,7 @@ const gameOptions = {
     fieldHeight: 500,
     minBlocks: 3,
     maxBlocks: 9,
-    time: 60000,
+    time: 5000,
     map: [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -125,7 +126,16 @@ function createGameTimer(options) {
     clearTimeout(gameTimerId)
     let gameTime = options.time
     gameTimerId = setTimeout(function tick() {
-
+        let finishMain = `<div class="finish-main">
+        <div class="finish-info">
+          <p class="finish-points"><span>You score:</span> ${counter}</p>
+          <div class="user">
+            <p>name: </p>
+            <input type="text" class="user-name">
+          </div>
+          <button class="btn btn-success finish-btn" id="userNameAndPoints">save</button>
+        </div>
+      </div>`
         gameTime -= 1000
 
         timer.value = timeFormat.format(gameTime)
@@ -133,10 +143,11 @@ function createGameTimer(options) {
         if (gameTime > 0) {
             gameTimerId = setTimeout(tick, 1000);
         } else {
-            alert('game over')
+          finish.insertAdjacentHTML("afterbegin", finishMain)
+            finish.show()
         }
 
-    }, 0);
+    }, 0)
 }
 
 function getRandomIntInclusive(min, max) {
@@ -144,11 +155,3 @@ function getRandomIntInclusive(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
 }
-
-
-
-const map = [
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 1]
-]
